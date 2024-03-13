@@ -11,7 +11,7 @@ const svg = d3.select("#graph").append("svg")
 
 const container = svg.append("g");
 
-d3.csv("../data/full_data.csv").then(function(data) {
+d3.csv("./full_data.csv").then(function(data) {
     const links = data.map(d => ({
         source: d.SOURCE,
         target: d.DESTINATION
