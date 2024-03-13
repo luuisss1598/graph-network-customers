@@ -23,12 +23,12 @@ d3.csv("../data/full_data.csv").then(function(data) {
         nodeDegrees[link.target] = (nodeDegrees[link.target] || 0) + 1;
     });
 
-    const filteredLinks = links.filter(link => nodeDegrees[link.source] >= 6 && nodeDegrees[link.target] >= 6);
+    const filteredLinks = links.filter(link => nodeDegrees[link.source] >= 2 && nodeDegrees[link.target] >= 2);
 
     let nodes = {};
     filteredLinks.forEach(link => {
-        if (nodeDegrees[link.source] >= 6) nodes[link.source] = { id: link.source };
-        if (nodeDegrees[link.target] >= 6) nodes[link.target] = { id: link.target };
+        if (nodeDegrees[link.source] >= 2) nodes[link.source] = { id: link.source };
+        if (nodeDegrees[link.target] >= 2) nodes[link.target] = { id: link.target };
     });
 
     nodes = Object.values(nodes);
